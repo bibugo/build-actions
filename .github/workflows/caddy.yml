@@ -24,7 +24,7 @@ jobs:
 
       - name: Build caddy from source
         run: |
-          xcaddy build $(sed 's/^/--with /' caddy/plugins | xargs)
+          xcaddy build $(sed 's/^/--with /' configuration/caddy/plugins | xargs)
           ./caddy version
           echo "CADDY_VERSION=$(./caddy version | cut -d ' ' -f 1)" >> $GITHUB_ENV
 
